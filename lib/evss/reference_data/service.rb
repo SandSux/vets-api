@@ -28,7 +28,7 @@ module EVSS
       end
 
       def get_treatment_centers(state_code = nil)
-        state_code = state_code.upcase
+        state_code = state_code&.upcase
         url = case state_code
               when /[A-Z]{2}/
                 "treatmentcenter?stateCode=#{state_code}"
