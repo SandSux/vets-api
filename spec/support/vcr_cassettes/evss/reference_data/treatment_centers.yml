@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: "<EVSS_AWS_BASE_URL>/treatmentcenter"
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+      va-eauth-csid:
+      - DSLogon
+      va-eauth-authenticationmethod:
+      - DSLogon
+      va-eauth-pnidtype:
+      - SSN
+      va-eauth-assurancelevel:
+      - '3'
+      va-eauth-firstName:
+      - Mark
+      va-eauth-lastName:
+      - Webb
+      va-eauth-issueinstant:
+      - '2018-04-23T17:58:15-07:00'
+      va-eauth-dodedipnid:
+      - '1013590059'
+      va-eauth-pid:
+      - '13367440'
+      va-eauth-pnid:
+      - '796104437'
+      va-eauth-birthdate:
+      - '1950-10-04T00:00:00+00:00'
+      va-eauth-authorization:
+      - '{"authorizationResponse":{"status":"VETERAN","idType":"SSN","id":"796104437","edi":"1013590059","firstName":"Mark","lastName":"Webb","birthDate":"1950-10-04T00:00:00+00:00"}}'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 24 Apr 2018 00:58:16 GMT
+      Server:
+      - Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips
+      Content-Type:
+      - application/json
+      Set-Cookie:
+      - WLS_12.1_App1_Cluster_2_ROUTEID=.01; path=/
+      - WSS-REFERENCEDATA-SERVICES_JSESSIONID=sO31KIWkwF9ZWnLfg9LQRDxD9HgePK1qoEZut3uJfD79824WS_9I!-2048424585;
+        path=/; HttpOnly
+      Via:
+      - 1.1 csraciapp6.evss.srarad.com
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "facilities" : [ {
+            "city" : "MINNEAPOLIS",
+            "id" : 12965800,
+            "name" : "MINNEAPOLIS VA MEDICAL CENTER",
+            "state" : "MN"
+          }, {
+            "city" : "BIRMINGHAM",
+            "id" : 12965732,
+            "name" : "BIRMINGHAM VA MEDICAL CENTER",
+            "state" : "AL"
+          }, {
+            "city" : "LITTLE ROCK",
+            "id" : 12965737,
+            "name" : "JOHN L. MCCLELLAN MEMORIAL VETERANS HOSPITAL",
+            "state" : "AR"
+          }, {
+            "city" : "ORLANDO",
+            "id" : 600029581,
+            "name" : "ORLANDO VA MEDICAL CENTER",
+            "state" : "FL"
+          }, {
+            "city" : "HARLINGEN",
+            "id" : 600113317,
+            "name" : "VA TEXAS VALLEY COASTAL BEND HEALTH CARE SYSTEM",
+            "state" : "TX"
+          } ]
+        }
+    http_version:
+  recorded_at: Tue, 24 Apr 2018 00:58:16 GMT
+recorded_with: VCR 3.0.3
