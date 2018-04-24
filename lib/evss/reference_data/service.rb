@@ -27,6 +27,23 @@ module EVSS
         handle_error(e)
       end
 
+      def get_treatment_centers(state_code = nil)
+        state_code = state_code.upcase
+        url = case state_code
+              when /[A-Z]{2}/
+                "treatmentcenter?stateCode=#{state_code}"
+              else
+                'treatmentcenter'
+              end
+
+        with_monitoring do
+          raw_response = perform(:get, url)
+          EVSS::ReferenceData::TreatmentCenterResponse.new(raw_response.status, raw_response)
+        end
+      rescue StandardError => e
+        handle_error(e)
+      end
+
       private
 
       # overrides EVSS::Service#headers_for_user
